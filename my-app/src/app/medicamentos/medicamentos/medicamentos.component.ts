@@ -7,6 +7,7 @@ import { Medicamentos } from '../medicamentos';
   styleUrls: ['./medicamentos.component.css']
 })
 export class MedicamentosComponent implements OnInit {
+/*medicamentos: Medicamentos[]={};   */
 
 @Input() medicamentos:Medicamentos = new Medicamentos();
 
