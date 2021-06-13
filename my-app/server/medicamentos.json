@@ -1,0 +1,12 @@
+{
+    "medicamentos": [
+        {
+            "id": 1,
+            "nombre": "Perifar 400",
+            "imagen": "https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/5/2/52902_10.jpg",
+            "descripcion": "Analgésico anti-inflamatorio",
+            "precio": 81,
+            "cantidad": 100
+        }
+    ] 
+}
