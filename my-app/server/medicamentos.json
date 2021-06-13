@@ -3,10 +3,34 @@
         {
             "id": 1,
             "nombre": "Perifar 400",
-            "imagen": "https://tiendacdn.farmashop.com.uy/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/5/2/52902_10.jpg",
-            "descripcion": "Analgésico anti-inflamatorio",
+            "imagen": "https://www.perifar.com.uy/wp-content/uploads/2018/08/400.png",
+            "descripcion": "Analgésico anti-inflamatorio.",
             "precio": 81,
             "cantidad": 100
+        },
+        {
+            "id": 2,
+            "nombre": "Perifar Grip 200",
+            "imagen": "https://www.perifar.com.uy/wp-content/uploads/2020/08/PERIFAR-GRIP-200-300x300.png",
+            "descripcion": "Antigripal. Reanima y descongestiona.",
+            "precio": 181,
+            "cantidad": 100 
+        }, 
+        {
+            "id": 3,
+            "nombre": "Perifar 600",
+            "imagen": "https://www.perifar.com.uy/wp-content/uploads/2018/08/600-300x300.png",
+            "descripcion": "Analgésico, anti-inflamatorio y antitérmico. ",
+            "precio": 111,
+            "cantidad": 100  
+        },
+        {
+            "id": 4,
+            "nombre": "Perifar Plus",
+            "imagen": "https://www.spefar.com/wp-content/uploads/2021/02/perifar_plus_8comp_500x500px.jpg",
+            "descripcion": "Analgésico, anti-inflamatorio.",
+            "precio": 115,
+            "cantidad": 100  
         }
     ] 
 }

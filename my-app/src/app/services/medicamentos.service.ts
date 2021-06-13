@@ -11,6 +11,7 @@ export class MedicamentosService {
   constructor(private _http: HttpClient) { }
 
   getMedicamentos(){
+    /*return this._http.get(this.url);*/
     return this._http.get<Medicamentos[]>(this.url);
   }
 }

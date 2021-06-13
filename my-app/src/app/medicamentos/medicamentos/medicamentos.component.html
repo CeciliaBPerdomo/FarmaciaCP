@@ -1,5 +1,8 @@
 <br>
-<h2>Lista de medicamentos</h2>
+<h2>Listado de medicamentos 
+</h2>
+<button type="button" class="btn btn-outline-primary">Nuevo Médicamento</button>
+
 <br>
 
 <div class="container">
@@ -10,25 +13,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">
-            </th>
-
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+          <tr *ngFor = "let item of medicamentos">
+              <th><img [src]="item.imagen" width="50px" height="50px"></th>
+              <th>{{item.id}}</th>
+              <th>{{item.nombre}}</th>
+              <th>{{item.descripcion}}</th>
+              <th>{{item.precio|currency}}</th>
+              <th>{{item.cantidad}}</th>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          
+         
         </tbody>
       </table>
 </div>

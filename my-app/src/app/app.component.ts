@@ -9,12 +9,12 @@ import { MedicamentosService } from './services/medicamentos.service';
 export class AppComponent implements OnInit{
   title = 'my-app';
 
-  constructor(private _medicamentosServices: MedicamentosService ){
+  constructor( ){
 
   }
   ngOnInit(): void{
-    this._medicamentosServices.getMedicamentos().subscribe((response:any)=>{
-      console.log(response);
-    })
+    /*this._medicamentosServices.getMedicamentos().subscribe((response:any)=>{
+      console.log("Hola response: ", response);
+    })*/
   }
 }
