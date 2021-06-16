@@ -14,11 +14,12 @@ medicamentos: Medicamentos [] = [];
 
   columnas = [
     '', /* Imagen*/
-    'Id', 
     'Nombre', 
     'Descripción',
     'Precio',
-    'Cantidad'
+    'Cantidad',
+    '',
+    ''
   ]
 
   constructor(private medicamentosServices: MedicamentosService) { }

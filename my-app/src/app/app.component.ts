@@ -9,12 +9,37 @@ import { MedicamentosService } from './services/medicamentos.service';
 export class AppComponent implements OnInit{
   title = 'my-app';
 
+  menu = [
+    {
+      nombre: "Ventas",
+      enlace: "/ventas",
+      class: "nav-link"
+    }, 
+    {
+      nombre: "Envíos",
+      enlace: "/envios",
+      class: "nav-link"
+    }, 
+    {
+      nombre: "Medicamentos",
+      enlace: "/medicamentos",
+      class: "nav-link"
+    },
+    {
+      nombre: "Empleados",
+      enlace: "/empleados",
+      class: "nav-link"
+    },
+    {
+      nombre: "Usuarios",
+      enlace: "/usuarios",
+      class: "nav-link"
+    }
+  ]
+
   constructor( ){
 
   }
   ngOnInit(): void{
-    /*this._medicamentosServices.getMedicamentos().subscribe((response:any)=>{
-      console.log("Hola response: ", response);
-    })*/
   }
 }

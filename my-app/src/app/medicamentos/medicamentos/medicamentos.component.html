@@ -1,9 +1,14 @@
 <br>
 <h2>Listado de medicamentos 
+  <button type="button" class="btn btn-outline-success">Nuevo médicamento</button>
 </h2>
-<button type="button" class="btn btn-outline-primary">Nuevo Médicamento</button>
 
 <br>
+<div class="input-group mb-3" style="background-color: #e3f2fd; padding: 15px;">
+  <label>Nombre del medicamento: </label>
+  <input type="text" class="form-control" placeholder="Buscar medicamento" aria-label="medicamento">
+  <button type="button" class="btn btn-outline-primary">Buscar</button>  
+</div>
 
 <div class="container">
     <table class="table table-striped table-hover">
@@ -15,14 +20,16 @@
         <tbody>
           <tr *ngFor = "let item of medicamentos">
               <th><img [src]="item.imagen" width="50px" height="50px"></th>
-              <th>{{item.id}}</th>
               <th>{{item.nombre}}</th>
               <th>{{item.descripcion}}</th>
               <th>{{item.precio|currency}}</th>
               <th>{{item.cantidad}}</th>
+
+              <th>
+                <a class="btn btn-outline-primary">Modificar</a>
+                <a class="btn btn-outline-danger">Eliminar</a>
+              </th>
           </tr>
-          
-         
         </tbody>
       </table>
 </div>
