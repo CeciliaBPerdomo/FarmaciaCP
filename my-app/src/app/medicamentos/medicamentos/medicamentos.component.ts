@@ -18,17 +18,45 @@ medicamentos: Medicamentos [] = [];
     'Descripción',
     'Precio',
     'Cantidad',
-    '',
-    ''
+    '', /* Modificar */
+    '' /* Eliminar */
   ]
 
-  constructor(private medicamentosServices: MedicamentosService) { }
+  nombreMedicamento = "";
+  backup: Medicamentos[] = [];
+  showTrash = false;
 
-  ngOnInit(): void {
+  constructor(private medicamentosServices: MedicamentosService) {
+  }
+
+  ngOnInit(): void { /* Lista los médicamentos */
     this.medicamentosServices.getMedicamentos().subscribe(response =>{
-      console.log("Si este response: ", response)
       this.medicamentos = response;
+      this.backup = this.medicamentos;
     })
   }
 
+  /* Filtra por nombre de médicamento */
+  filtrar(){
+    let filteredMedicamentos = this.medicamentos.filter(medicamentos =>{
+      return medicamentos.nombre.toLowerCase() === this.nombreMedicamento.toLowerCase();
+    })
+    this.medicamentos = filteredMedicamentos;
+  }
+
+  limpiar(){
+    if(this.nombreMedicamento.length === 0){
+      this.medicamentos = this.backup;
+    }
+  }
+
+  borrar(){
+    this.nombreMedicamento = "";
+    this.showTrash = false;
+    this.medicamentos = this.backup;
+  }
+
+  handle(){
+    this.showTrash = true;
+  }
 }

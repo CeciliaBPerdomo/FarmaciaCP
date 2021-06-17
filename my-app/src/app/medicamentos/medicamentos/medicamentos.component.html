@@ -5,13 +5,17 @@
 
 <br>
 <div class="input-group mb-3" style="background-color: #e3f2fd; padding: 15px;">
-  <label>Nombre del medicamento: </label>
-  <input type="text" class="form-control" placeholder="Buscar medicamento" aria-label="medicamento">
-  <button type="button" class="btn btn-outline-primary">Buscar</button>  
+  <span class="input-group-text" id="basic-addon3">Nombre del medicamento: </span>
+  <input type="text" (input)="handle()" class="form-control" [(ngModel)]="nombreMedicamento" placeholder="Buscar medicamento" aria-label="medicamento">
+  <button *ngIf="showTrash" type="button" class="btn btn-outline-primary" (click)="borrar()"><i class="bi bi-trash"></i></button>
+  <button type="button" class="btn btn-outline-primary" (click)="filtrar()">Buscar</button>  
 </div>
 
 <div class="container">
-    <table class="table table-striped table-hover">
+  <div class="sinMedicam" *ngIf = "medicamentos.length === 0">
+    <h3>No se encontraron medicamentos con ese nombre.</h3>
+  </div>
+    <table class="table table-striped table-hover" *ngIf = "medicamentos.length >= 1">
         <thead>
           <tr>
             <th scope="col" *ngFor = "let item of columnas">{{ item }}</th>
