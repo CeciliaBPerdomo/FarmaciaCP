@@ -6,6 +6,7 @@ import { EnviosComponent } from './farmacia/envios/envios.component';
 import { FarmaciaComponent } from './farmacia/farmacia/farmacia.component';
 import { VentasComponent } from './farmacia/ventas/ventas.component';
 import { LoginComponent } from './login/login.component';
+import { AddMedicamentoComponent } from './medicamentos/add-medicamento/add-medicamento.component';
 import { MedicamentosComponent } from './medicamentos/medicamentos/medicamentos.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'ventas', component: VentasComponent },
   {path: 'envios', component: EnviosComponent}, 
   {path: 'empleados', component: EmpleadosComponent},
-  {path: 'usuarios', component: UsuariosComponent}
+  {path: 'usuarios', component: UsuariosComponent},
+  {path: 'nuevoMedicamento', component: AddMedicamentoComponent}
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import { VentasComponent } from './farmacia/ventas/ventas.component';
 import { EnviosComponent } from './farmacia/envios/envios.component';
 import { EmpleadosComponent } from './empleados/empleados/empleados.component';
 import { UsuariosComponent } from './empleados/usuarios/usuarios.component';
+import { AddMedicamentoComponent } from './medicamentos/add-medicamento/add-medicamento.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UsuariosComponent } from './empleados/usuarios/usuarios.component';
     VentasComponent,
     EnviosComponent,
     EmpleadosComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    AddMedicamentoComponent
   ],
   imports: [
     BrowserModule,

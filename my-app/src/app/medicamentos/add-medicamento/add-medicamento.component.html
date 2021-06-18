@@ -1,0 +1,38 @@
+<div class="titulo">
+    <br>
+    <h3>Ingreso de médicamentos</h3>
+    <br>
+</div>
+
+<div class="formularioing">
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Nombre: </span>
+        <input type="text" [(ngModel)]="medicamento.nombre" class="form-control" placeholder="Nombre del medicamento" name="nombre" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Descripción: </span>
+        <input type="text" [(ngModel)]="medicamento.descripcion" class="form-control" placeholder="Descripción del medicamento" aria-label="Username" name="descripcion" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">Precio: $</span>
+        <input type="text" [(ngModel)]="medicamento.precio" class="form-control" name="precio" aria-label="Amount (to the nearest dollar)" placeholder="Precio de venta">
+        <span class="input-group-text">.00</span>
+
+        <span class="input-group-text" id="basic-addon1">Cantidad: </span>
+        <input type="text" [(ngModel)]="medicamento.cantidad" class="form-control" placeholder="Cantidad" name="cantidad" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">URL de la imágen: </span>
+        <input type="text" [(ngModel)]="medicamento.imagen" class="form-control" placeholder="URL de la imagen" name="imagen" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="submit">
+        <br>
+        <button type="button" (click)="save($event)" class="btn btn-outline-success">Ingresar nuevo medicamento</button>
+    </div>
+    
+</div>
