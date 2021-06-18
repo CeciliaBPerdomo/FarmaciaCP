@@ -59,4 +59,14 @@ medicamentos: Medicamentos [] = [];
   handle(){
     this.showTrash = true;
   }
+
+  deleteMedicamento(id: number){
+    this.medicamentosServices.eliminarMedicamento(id).subscribe((response: any)=>{
+      console.log(response)
+      const newItems = this.medicamentos.filter((item: any)=>{
+        return item.id !== id
+      });
+      this.medicamentos = newItems;
+    })    
+  }
 }

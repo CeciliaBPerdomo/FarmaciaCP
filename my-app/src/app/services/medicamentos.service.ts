@@ -11,11 +11,14 @@ export class MedicamentosService {
   constructor(private _http: HttpClient) { }
 
   getMedicamentos(){
-    /*return this._http.get(this.url);*/
     return this._http.get<Medicamentos[]>(this.url);
   }
 
   insertarMedicamento(medicamento: Medicamentos){
     return this._http.post(this.url, medicamento);
+  }
+
+  eliminarMedicamento(id:number){
+    return this._http.delete(this.url + "/" + id);
   }
 }
