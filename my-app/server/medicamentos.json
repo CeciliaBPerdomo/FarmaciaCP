@@ -39,6 +39,14 @@
       "descripcion": "Analgésico, descongestivo, antiespasmódico",
       "precio": "129",
       "cantidad": "100"
+    },
+    {
+      "id": 6,
+      "imagen": "https://www.perifar.com.uy/wp-content/uploads/2018/08/fem.png",
+      "nombre": "Otro medicamento",
+      "descripcion": "dsdsa",
+      "precio": "12",
+      "cantidad": "12"
     }
   ]
 }

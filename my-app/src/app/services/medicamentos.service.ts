@@ -21,4 +21,9 @@ export class MedicamentosService {
   eliminarMedicamento(id:number){
     return this._http.delete(this.url + "/" + id);
   }
+
+  updateMedicamento(medicamento: Medicamentos){
+    return this._http.put(this.url + "/"+ medicamento.id, medicamento);
+  }
+
 }

@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'envios', component: EnviosComponent}, 
   {path: 'empleados', component: EmpleadosComponent},
   {path: 'usuarios', component: UsuariosComponent},
-  {path: 'nuevoMedicamento', component: AddMedicamentoComponent}
+  {path: 'nuevoMedicamento/:id', component: AddMedicamentoComponent}
 ];
 
 @NgModule({

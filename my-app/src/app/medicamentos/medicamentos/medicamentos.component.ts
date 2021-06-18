@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MedicamentosService } from 'src/app/services/medicamentos.service';
 import { Medicamentos } from '../medicamentos';
 
@@ -26,8 +27,7 @@ medicamentos: Medicamentos [] = [];
   backup: Medicamentos[] = [];
   showTrash = false;
 
-  constructor(private medicamentosServices: MedicamentosService) {
-  }
+  constructor(private medicamentosServices: MedicamentosService, private _router: Router) {}
 
   ngOnInit(): void { /* Lista los médicamentos */
     this.medicamentosServices.getMedicamentos().subscribe(response =>{
@@ -60,6 +60,7 @@ medicamentos: Medicamentos [] = [];
     this.showTrash = true;
   }
 
+  /* Borra medicamentos*/
   deleteMedicamento(id: number){
     this.medicamentosServices.eliminarMedicamento(id).subscribe((response: any)=>{
       console.log(response)
@@ -69,4 +70,10 @@ medicamentos: Medicamentos [] = [];
       this.medicamentos = newItems;
     })    
   }
+
+  /* Actualiza la información de un medicamento */
+  updateMedicamento(medicamento: Medicamentos){
+    this._router.navigate(["/nuevoMedicamento", medicamento.id])
+  } 
+
 }

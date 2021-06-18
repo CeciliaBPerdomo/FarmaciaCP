@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { MedicamentosService } from 'src/app/services/medicamentos.service';
 import { Medicamentos } from '../medicamentos';
 
@@ -10,16 +11,38 @@ import { Medicamentos } from '../medicamentos';
 export class AddMedicamentoComponent implements OnInit {
   medicamento: Medicamentos = new Medicamentos();
 
-  constructor(private _medicamentosService: MedicamentosService) { }
+  constructor(private _medicamentosService: MedicamentosService, private _activedRoute: ActivatedRoute) { }
+
+  id = 0; 
 
   ngOnInit(): void {
+    this._activedRoute.paramMap.subscribe((item: any)=>{
+      this.id = item.get('id'); 
+      if(this.id > 0){
+        this._medicamentosService.getMedicamentos().subscribe((response: Medicamentos[])=>{
+          const item = response.filter((med: any)=>{
+            return med.id == this.id;
+          })[0];
+          this.medicamento = item;
+        })
+      }
+    })
   }
 
   save(event: any){
-    this._medicamentosService.insertarMedicamento(this.medicamento).subscribe((response: any)=>{
-      console.log(response);
-      this.cleanFormData();
-    })
+    if(this.id > 0){
+      // Edito el medicamento. 
+      this._medicamentosService.updateMedicamento(this.medicamento).subscribe((response: any)=>{
+        console.log(response);
+        /*this.cleanFormData();*/
+      })
+    } else {
+      // Creo el nuevo medicamento
+      this._medicamentosService.insertarMedicamento(this.medicamento).subscribe((response: any)=>{
+        console.log(response);
+        this.cleanFormData();
+      })
+    }
   }
 
   cleanFormData(){

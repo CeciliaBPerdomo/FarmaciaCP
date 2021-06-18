@@ -1,6 +1,6 @@
 <br>
 <h3>Listado de medicamentos 
-  <button type="button" [routerLink]="['/nuevoMedicamento']" class="btn btn-outline-success">Nuevo médicamento</button>
+  <button type="button" [routerLink]="['/nuevoMedicamento', 0]" class="btn btn-outline-success">Nuevo médicamento</button>
 </h3>
 
 <br>
@@ -30,7 +30,7 @@
               <th>{{item.cantidad}}</th>
 
               <th>
-                <a class="btn btn-outline-primary">Modificar</a>
+                <a (click)="updateMedicamento(item)" class="btn btn-outline-primary">Modificar</a>
                 <a (click)="deleteMedicamento(item.id)" class="btn btn-outline-danger">Eliminar</a>
               </th>
           </tr>
