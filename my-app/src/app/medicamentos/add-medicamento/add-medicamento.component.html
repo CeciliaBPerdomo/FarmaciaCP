@@ -8,31 +8,52 @@
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Nombre: </span>
-        <input type="text" [(ngModel)]="medicamento.nombre" class="form-control" placeholder="Nombre del medicamento" name="nombre" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('nombre')" [(ngModel)]="medicamento.nombre" class="form-control" placeholder="Nombre del medicamento" name="nombre" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div *ngIf="validation.requeridoNombre.isValid" class="alert alert-danger" role="alert">
+        {{ validation.requeridoNombre.eMessage }}
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Descripción: </span>
-        <input type="text" [(ngModel)]="medicamento.descripcion" class="form-control" placeholder="Descripción del medicamento" aria-label="Username" name="descripcion" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('descripcion')" [(ngModel)]="medicamento.descripcion" class="form-control" placeholder="Descripción del medicamento" aria-label="Username" name="descripcion" aria-describedby="basic-addon1">
+    </div>
+
+    <div *ngIf="validation.descripcion.isValid" class="alert alert-danger" role="alert">
+        {{ validation.descripcion.eMessage }}
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text">Precio: $</span>
-        <input type="text" [(ngModel)]="medicamento.precio" class="form-control" name="precio" aria-label="Amount (to the nearest dollar)" placeholder="Precio de venta">
+        <input type="text" (input)="isValid('precio')" [(ngModel)]="medicamento.precio" class="form-control" name="precio" aria-label="Amount (to the nearest dollar)" placeholder="Precio de venta">
         <span class="input-group-text">.00</span>
 
         <span class="input-group-text" id="basic-addon1">Cantidad: </span>
-        <input type="text" [(ngModel)]="medicamento.cantidad" class="form-control" placeholder="Cantidad" name="cantidad" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('cantidad')" [(ngModel)]="medicamento.cantidad" class="form-control" placeholder="Cantidad" name="cantidad" aria-label="Username" aria-describedby="basic-addon1">
+
+    </div>
+
+     <div *ngIf="validation.precioMayoraCero.isValid" class="alert alert-danger" role="alert">
+        {{ validation.precioMayoraCero.eMessage }}
+    </div>
+
+    <div *ngIf="validation.cantidadMayoraCero.isValid" class="alert alert-danger" role="alert">
+        {{ validation.cantidadMayoraCero.eMessage }}
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">URL de la imágen: </span>
-        <input type="text" [(ngModel)]="medicamento.imagen" class="form-control" placeholder="URL de la imagen" name="imagen" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('imagen')" [(ngModel)]="medicamento.imagen" class="form-control" placeholder="URL de la imagen" name="imagen" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div *ngIf="validation.imagen.isValid" class="alert alert-danger" role="alert">
+        {{ validation.imagen.eMessage }}
     </div>
 
     <div class="submit">
         <br>
-        <button type="button" (click)="save($event)" class="btn btn-outline-success">Ingresar nuevo medicamento</button>
+        <button type="button" (click)="save($event)" class="btn btn-outline-success">Guardar medicamento</button>
     </div>
     
 </div>

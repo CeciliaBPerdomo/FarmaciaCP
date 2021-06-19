@@ -42,11 +42,19 @@
     },
     {
       "id": 6,
-      "imagen": "https://www.perifar.com.uy/wp-content/uploads/2018/08/fem.png",
-      "nombre": "Otro medicamento",
-      "descripcion": "dsdsa",
-      "precio": "12",
-      "cantidad": "12"
+      "imagen": "https://www.perifar.com.uy/wp-content/uploads/2020/08/PERIFAR-INFANTIL-300x300.png",
+      "nombre": "Perifar Infantil",
+      "descripcion": "Antifebril, analgésico, pedriatico",
+      "precio": "86",
+      "cantidad": "100"
+    },
+    {
+      "id": 7,
+      "imagen": "https://www.perifar.com.uy/wp-content/uploads/2018/08/flex.png",
+      "nombre": "Perifar Flex",
+      "descripcion": "Relajante muscular. Analgésico. ",
+      "precio": "124",
+      "cantidad": "100"
     }
   ]
 }
