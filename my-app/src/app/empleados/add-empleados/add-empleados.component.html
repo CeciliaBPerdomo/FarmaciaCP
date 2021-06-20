@@ -7,37 +7,37 @@
 <div class="formularioing">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Nombre completo: </span>
-        <input type="text" class="form-control" placeholder="Nombre del funcionario" name="nombre" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Nombre del funcionario" [(ngModel)]="empleado.nombre" name="nombre" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Dirección: </span>
-        <input type="text" class="form-control" placeholder="Dirección del funcionario" name="direccion" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Dirección del funcionario" [(ngModel)]="empleado.direccion" name="direccion" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Correo electrónico: </span>
-        <input type="text" class="form-control" placeholder="Correo electrónico" name="mail" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Correo electrónico" [(ngModel)]="empleado.mail" name="mail" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text">Telefono: </span>
-        <input type="text" class="form-control" placeholder="Telefono" name="telefono" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Telefono" [(ngModel)]="empleado.telefono" name="telefono" aria-label="Username" aria-describedby="basic-addon1">
 
         <span class="input-group-text">Fecha de nacimiento: </span>
-        <input type="text" class="form-control" placeholder="Fecha de Nac (dd/mm/aaaa)" name="fechaNac" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Fecha de Nac (dd/mm/aaaa)" [(ngModel)]="empleado.fechaNac" name="fechaNac" aria-label="Username" aria-describedby="basic-addon1">
 
         <span class="input-group-text">Fecha de ingreso: </span>
-        <input type="text" class="form-control" placeholder="Fecha Ingreso (dd/mm/aaaa)" name="fechaIng" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Fecha Ingreso (dd/mm/aaaa)" [(ngModel)]="empleado.fechaIng" name="fechaIng" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">URL de la imagen: </span>
-        <input type="text" class="form-control" placeholder="URL de la imagen" name="imagen" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="URL de la imagen" [(ngModel)]="empleado.imagen" name="imagen" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="submit">
         <br>
-        <button type="button" class="btn btn-outline-success">Guardar funcionario</button>
+        <button type="button" (click)="save($event)" class="btn btn-outline-success">Guardar funcionario</button>
     </div>
 </div>

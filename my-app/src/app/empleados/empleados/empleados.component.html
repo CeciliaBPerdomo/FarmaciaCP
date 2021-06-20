@@ -29,7 +29,7 @@
                 <th>{{item.fechaNac}}</th>
                 <th>{{item.fechaIng}}</th>
                 <th>
-                  <a class="btn btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                  <a (click)="updateEmpleado(item)" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></a>
                   <a class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
                 </th>
               </tr>

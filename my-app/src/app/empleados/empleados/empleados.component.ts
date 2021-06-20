@@ -59,4 +59,8 @@ export class EmpleadosComponent implements OnInit {
   handle(){
     this.showTrash = true;
   }
+
+  updateEmpleado(empleado: Empleados){
+    this._router.navigate(["/nuevoEmpleado", empleado.id])
+  }
 }
