@@ -1,1 +1,22 @@
-<p>empleados works!</p>
+<br>
+<h3>Funcionarios
+  <button type="button" class="btn btn-outline-success">Nuevo funcionario</button>
+</h3>
+
+<br>
+<div class="input-group mb-3" style="background-color: #e3f2fd; padding: 15px;">
+  <span class="input-group-text" id="basic-addon3">Nombre del funcionario: </span>
+  <input type="text" class="form-control" placeholder="Buscar funcionario" aria-label="funcionario">
+  <button type="button" class="btn btn-outline-primary"><i class="bi bi-trash"></i></button>
+  <button type="button" class="btn btn-outline-primary">Buscar</button>  
+</div>
+
+<div class="container">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+              <th scope="col" *ngFor = "let item of columnas">{{ item }}</th>
+            </tr>
+          </thead>
+    </table>
+</div>

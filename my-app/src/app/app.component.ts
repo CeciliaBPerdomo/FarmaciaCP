@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
       class: "nav-link"
     },
     {
-      nombre: "Empleados",
+      nombre: "Funcionarios",
       enlace: "/empleados",
       class: "nav-link"
     },
