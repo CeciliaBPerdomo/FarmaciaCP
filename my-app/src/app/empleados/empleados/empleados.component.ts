@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { EmpleadosService } from 'src/app/services/empleados.service';
+import { Empleados } from '../empleados';
 
 @Component({
   selector: 'app-empleados',
@@ -6,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent implements OnInit {
+  empleados: Empleados[] = [];
 
   columnas = [
     '', /* Imagen*/
@@ -19,9 +23,40 @@ export class EmpleadosComponent implements OnInit {
     '' /* Eliminar */
   ]
 
-  constructor() { }
+  backup: Empleados[] = [];
+  nombreEmpleado = "";
+  showTrash = false;
 
-  ngOnInit(): void {
+  constructor(private empleadosServices: EmpleadosService, private _router: Router) { }
+
+  ngOnInit(): void { /* Lista los empleados */ 
+    this.empleadosServices.getFuncionarios().subscribe(response => {
+      this.empleados = response;
+      this.backup = this.empleados;
+    });
   }
 
+  /* Filtra por nombre del funcionario */
+  filtrar(){
+    let filteredEmpleados = this.empleados.filter(empleados =>{
+      return empleados.nombre.toLowerCase() === this.nombreEmpleado.toLowerCase();
+    })
+    this.empleados = filteredEmpleados;
+  }
+
+  limpiar(){
+    if(this.nombreEmpleado.length === 0){
+      this.empleados = this.backup;
+    }
+  }
+
+  borrar(){
+    this.nombreEmpleado = "";
+    this.showTrash = false;
+    this.empleados = this.backup;
+  }
+
+  handle(){
+    this.showTrash = true;
+  }
 }

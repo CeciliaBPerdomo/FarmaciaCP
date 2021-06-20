@@ -1,14 +1,14 @@
 <br>
 <h3>Funcionarios
-  <button type="button" class="btn btn-outline-success">Nuevo funcionario</button>
+  <button type="button" [routerLink]="['/nuevoEmpleado', 0]" class="btn btn-outline-success">Nuevo funcionario</button>
 </h3>
 
 <br>
 <div class="input-group mb-3" style="background-color: #e3f2fd; padding: 15px;">
   <span class="input-group-text" id="basic-addon3">Nombre del funcionario: </span>
-  <input type="text" class="form-control" placeholder="Buscar funcionario" aria-label="funcionario">
-  <button type="button" class="btn btn-outline-primary"><i class="bi bi-trash"></i></button>
-  <button type="button" class="btn btn-outline-primary">Buscar</button>  
+  <input type="text" (input)="handle()" class="form-control" placeholder="Buscar funcionario" [(ngModel)]="nombreEmpleado" aria-label="funcionario">
+  <button type="button" *ngIf="showTrash" class="btn btn-outline-primary" (click)="borrar()"><i class="bi bi-trash"></i></button>
+  <button type="button" class="btn btn-outline-primary" (click)="filtrar()">Buscar</button>  
 </div>
 
 <div class="container">
@@ -18,5 +18,21 @@
               <th scope="col" *ngFor = "let item of columnas">{{ item }}</th>
             </tr>
           </thead>
+
+          <tbody>
+              <tr *ngFor = "let item of empleados">
+                <th><img [src]="item.imagen" width="50px" height="50px"></th>
+                <th>{{item.nombre}}</th>
+                <th>{{item.direccion}}</th>
+                <th>{{item.telefono}}</th>
+                <th>{{item.mail}}</th>
+                <th>{{item.fechaNac}}</th>
+                <th>{{item.fechaIng}}</th>
+                <th>
+                  <a class="btn btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                  <a class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
+                </th>
+              </tr>
+          </tbody>
     </table>
 </div>

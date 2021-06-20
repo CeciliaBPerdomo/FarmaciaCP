@@ -13,6 +13,7 @@ import { EnviosComponent } from './farmacia/envios/envios.component';
 import { EmpleadosComponent } from './empleados/empleados/empleados.component';
 import { UsuariosComponent } from './empleados/usuarios/usuarios.component';
 import { AddMedicamentoComponent } from './medicamentos/add-medicamento/add-medicamento.component';
+import { AddEmpleadosComponent } from './empleados/add-empleados/add-empleados.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddMedicamentoComponent } from './medicamentos/add-medicamento/add-medi
     EnviosComponent,
     EmpleadosComponent,
     UsuariosComponent,
-    AddMedicamentoComponent
+    AddMedicamentoComponent,
+    AddEmpleadosComponent
   ],
   imports: [
     BrowserModule,

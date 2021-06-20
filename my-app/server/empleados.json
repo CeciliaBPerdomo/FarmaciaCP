@@ -1,0 +1,14 @@
+{
+    "empleados": [
+        {
+            "id": 1,
+            "nombre": "Cecilia Perdomo",
+            "imagen": "https://starrgate.s3.amazonaws.com/CACHE/images/users/363d53beadecb700c84fcc82584eaa93e4bcb440/profile_jOBbkHp/bb0f5b7d15a9f78ce8c1667baed2c53d.jpg",
+            "direccion": "B. Brum 1013, Colonia",
+            "telefono": "099387921",
+            "mail": "cecilia.perdomo@gmail.com", 
+            "fechaNac": "11/08/1984",
+            "fechaIng": "20/06/2021"
+        }
+    ]
+}
