@@ -60,7 +60,20 @@ export class EmpleadosComponent implements OnInit {
     this.showTrash = true;
   }
 
+  /* Actualiza la información del empleado */
   updateEmpleado(empleado: Empleados){
     this._router.navigate(["/nuevoEmpleado", empleado.id])
   }
+
+  /* Borra un empleado */
+  deleteEmpleado(id: number){
+    this.empleadosServices.eliminarFuncionario(id).subscribe((response: any)=>{
+      console.log("Borra: ", response);
+      const newItems = this.empleados.filter((item: any)=>{
+        return item.id !== id
+      });
+      this.empleados = newItems;
+    })
+  }
+  
 }

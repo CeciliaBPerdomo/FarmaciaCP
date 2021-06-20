@@ -17,17 +17,6 @@ export class AddEmpleadosComponent implements OnInit {
   formValid = true;
 
   ngOnInit(): void {
-    /*this._activedRoute.paramMap.subscribe((item: any)=>{
-      this.id = item.get('id'); 
-      if(this.id > 0){
-        this._medicamentosService.getMedicamentos().subscribe((response: Medicamentos[])=>{
-          const item = response.filter((med: any)=>{
-            return med.id == this.id;
-          })[0];
-          this.medicamento = item;
-        })
-      }
-    }*/
     this._activedRoute.paramMap.subscribe((item: any)=>{
     this.id = item.get('id');
     if(this.id > 0){
