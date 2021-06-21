@@ -35,7 +35,7 @@ export class AddMedicamentoComponent implements OnInit {
     this.isFormValid();
     this.formValid = this.validation.requeridoNombre.isValid && this.validation.cantidadMayoraCero.isValid && this.validation.descripcion.isValid && this.validation.imagen.isValid && this.validation.precioMayoraCero.isValid ? true: false;
     
-    console.log(this.formValid);
+    console.log("Valido: ", this.formValid);
 
     if(!this.formValid){
       if(this.id > 0){

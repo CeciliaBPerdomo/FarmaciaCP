@@ -7,12 +7,20 @@
 <div class="formularioing">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Nombre completo: </span>
-        <input type="text" class="form-control" placeholder="Nombre del funcionario" [(ngModel)]="empleado.nombre" name="nombre" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('nombre')" class="form-control" placeholder="Nombre del funcionario" [(ngModel)]="empleado.nombre" name="nombre" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div *ngIf="validation.requeridoNombre.isValid" class="alert alert-danger" role="alert">
+        {{ validation.requeridoNombre.eMessage }}
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">Dirección: </span>
-        <input type="text" class="form-control" placeholder="Dirección del funcionario" [(ngModel)]="empleado.direccion" name="direccion" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('direccion')" class="form-control" placeholder="Dirección del funcionario" [(ngModel)]="empleado.direccion" name="direccion" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div *ngIf="validation.requeridoDireccion.isValid" class="alert alert-danger" role="alert">
+        {{ validation.requeridoDireccion.eMessage }}
     </div>
 
     <div class="input-group mb-3">
@@ -25,15 +33,27 @@
         <input type="text" class="form-control" placeholder="Telefono" [(ngModel)]="empleado.telefono" name="telefono" aria-label="Username" aria-describedby="basic-addon1">
 
         <span class="input-group-text">Fecha de nacimiento: </span>
-        <input type="text" class="form-control" placeholder="Fecha de Nac (dd/mm/aaaa)" [(ngModel)]="empleado.fechaNac" name="fechaNac" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('fechaNac')" class="form-control" placeholder="Fecha de Nac (dd/mm/aaaa)" [(ngModel)]="empleado.fechaNac" name="fechaNac" aria-label="Username" aria-describedby="basic-addon1">
 
         <span class="input-group-text">Fecha de ingreso: </span>
-        <input type="text" class="form-control" placeholder="Fecha Ingreso (dd/mm/aaaa)" [(ngModel)]="empleado.fechaIng" name="fechaIng" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('fechaIng')" class="form-control" placeholder="Fecha Ingreso (dd/mm/aaaa)" [(ngModel)]="empleado.fechaIng" name="fechaIng" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div *ngIf="validation.requeridoFechaNac.isValid" class="alert alert-danger" role="alert">
+        {{ validation.requeridoFechaNac.eMessage }}
+    </div>
+
+    <div *ngIf="validation.requeridoFechaIng.isValid" class="alert alert-danger" role="alert">
+        {{ validation.requeridoFechaIng.eMessage }}
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1">URL de la imagen: </span>
-        <input type="text" class="form-control" placeholder="URL de la imagen" [(ngModel)]="empleado.imagen" name="imagen" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" (input)="isValid('imagen')" class="form-control" placeholder="URL de la imagen" [(ngModel)]="empleado.imagen" name="imagen" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+    <div *ngIf="validation.imagen.isValid" class="alert alert-danger" role="alert">
+        {{ validation.imagen.eMessage }}
     </div>
 
     <div class="submit">
