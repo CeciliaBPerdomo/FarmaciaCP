@@ -12,7 +12,10 @@
 </div>
 
 <div class="container">
-    <table class="table table-striped table-hover">
+  <div class="sinEmple" *ngIf = "empleados.length === 0">
+    <h3>No se encontraron funcionarios con ese nombre.</h3>
+  </div>
+    <table class="table table-striped table-hover" *ngIf = "empleados.length >= 1">
         <thead>
             <tr>
               <th scope="col" *ngFor = "let item of columnas">{{ item }}</th>
