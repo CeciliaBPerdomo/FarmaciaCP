@@ -15,11 +15,11 @@ export class AppComponent implements OnInit{
       enlace: "/ventas",
       class: "nav-link"
     }, 
-    {
+    /*{
       nombre: "Envíos",
       enlace: "/envios",
       class: "nav-link"
-    }, 
+    },*/ 
     {
       nombre: "Medicamentos",
       enlace: "/medicamentos",

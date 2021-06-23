@@ -40,7 +40,7 @@
       "fechaIng": "20/06/2021",
       "fechaNac": "02/12/1981"
     }
-  ], 
+  ],
   "medicamentos": [
     {
       "id": 1,
@@ -96,6 +96,22 @@
       "nombre": "Perifar Flex",
       "descripcion": "Relajante muscular. Analgésico. ",
       "precio": "124",
+      "cantidad": "100"
+    },
+    {
+      "id": 8,
+      "imagen": "https://assets.stickpng.com/thumbs/59bf7f667a216d0b052f12d3.png",
+      "nombre": "Aspirina",
+      "descripcion": "Controla el dolor de cabeza, cuerpo, muscular.",
+      "precio": "123",
+      "cantidad": "100"
+    },
+    {
+      "id": 9,
+      "imagen": "https://www.aspirinetas.com.ar/sites/g/files/vrxlpx19077/files/styles/desktop_1000xauto/public/2021-05/aspirinetas-100mg-new-1.png?itok=h8C0cYAl",
+      "nombre": "Aspirinetas",
+      "descripcion": "Antiagregante plaquetario",
+      "precio": "66",
       "cantidad": "100"
     }
   ]

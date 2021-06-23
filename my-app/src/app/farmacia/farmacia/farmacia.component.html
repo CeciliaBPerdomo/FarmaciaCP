@@ -1,16 +1,32 @@
 <br>
-<h3> Medicamentos </h3>
-<br>
+<h3>Medicamentos </h3>
+<div class="input-group mb-3" style="background-color: #e3f2fd; padding: 15px;">
+  <span class="input-group-text" id="basic-addon3">Nombre del medicamento: </span>
+  <input type="text" (input)="handle()" class="form-control" [(ngModel)]="nombreMedicamento" placeholder="Nombre" aria-label="medicamento">
+
+  <span class="input-group-text" id="basic-addon3">Precio desde: $</span>
+  <input type="text" (input)="handle()" class="form-control" [(ngModel)]="desde" placeholder="Precio desde" aria-label="desde">
+  
+  <span class="input-group-text" id="basic-addon3">Precio hasta: $</span>
+  <input type="text" (input)="handle()" class="form-control" [(ngModel)]="hasta" placeholder="Precio hasta" aria-label="hasta">
+  
+  <button type="button" *ngIf="showTrash" class="btn btn-outline-primary" (click)="borrar()"><i class="bi bi-trash"></i></button>
+  <button type="button" class="btn btn-outline-primary" (click)="filtrar()">Buscar</button>  
+</div>
+
 <div class="container">
+    <div class="sinMedicam" *ngIf = "medicamento.length === 0">
+        <h3>No se encontraron medicamentos.</h3>
+    </div>
     <div class="card" *ngFor = "let medicamento of medicamento" style="width: 18rem;">
         <img [src]="medicamento.imagen" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title"><strong>{{ medicamento.nombre }}</strong></h5>
-          <p class="card-text"> {{ medicamento.descripcion }}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><strong>{{ medicamento.precio | currency }}</strong></li>
-          <li class="list-group-item">Cantidad: {{ medicamento.cantidad }}</li>
+            <li class="list-group-item"> {{ medicamento.descripcion }}</li>
+            <li class="list-group-item"><strong>{{ medicamento.precio | currency }}</strong></li>
+            <li class="list-group-item">Cantidad: {{ medicamento.cantidad }}</li>
         </ul>
         <div class="card-body">
             <ul class="list-group list-group-flush">
@@ -21,7 +37,7 @@
                 </li>
                 
                 <li class="list-group-item">
-                    <a class="btn btn-outline-success"><i class="bi bi-cart"></i></a>
+                    <a class="btn btn-outline-success"><i class="bi bi-basket2-fill"></i></a>
                 </li>
             </ul>
         </div>
