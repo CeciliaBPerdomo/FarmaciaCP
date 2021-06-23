@@ -16,6 +16,7 @@ export class FarmaciaComponent implements OnInit {
   nombreMedicamento = "";
   desde = 0;
   hasta = 0;
+  qty = 0;
 
   constructor(private _medicamentoService: MedicamentosService) { }
 
@@ -39,7 +40,7 @@ export class FarmaciaComponent implements OnInit {
     if(this.desde >= 1 && this.hasta >= 1){
       let filteredMedicamentos = this.medicamento.filter(medicamento =>{
         return medicamento.precio >= this.desde && medicamento.precio <= this.hasta;
-      });
+      })
       this.medicamento = filteredMedicamentos;
     }
   }
@@ -61,4 +62,13 @@ export class FarmaciaComponent implements OnInit {
   handle(){
     this.showTrash = true;
   }
+
+  plus(){ /* Agrega uno */
+    this.qty++;
+  }
+
+  less(){ /*Resta uno*/
+    this.qty = this.qty > 0 ? this.qty -1: /*para no tener valores negativos*/0;
+  }
+
 }
