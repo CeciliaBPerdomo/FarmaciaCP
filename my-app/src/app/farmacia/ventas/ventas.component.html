@@ -1,5 +1,7 @@
 <br>
+<button type="button" style="float: right;" (click)="finalizarCompra()" class="btn btn-outline-success">Finalizar compra</button>
 <h3>Ventas de medicamentos</h3>
+
 <br>
 <div class="container">
     <table class="table table-striped table-hover">
@@ -11,21 +13,27 @@
             <tr *ngFor = "let med of cartMed">
                 <th><img [src]="med.imagen" width="50px" height="50px"></th>
                 <th>{{med.nombre}}</th>
-                <th>{{med.cantidad}}</th>
+                <th>
+                    <a (click)="plus(med)" class="btn btn-outline-primary"><i class="bi bi-plus"></i></a>
+                    <input type="text" name="cantidad" [value]="med.cantidad" style="width: 35px; margin: 2px 5px; text-align: center;">
+                    <a (click)="less(med)" class="btn btn-outline-danger"><i class="bi bi-dash"></i></a>
+                </th>
                 <th>{{med.precio | currency}}</th>
+                <th><a class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></th>
             </tr>
         </tbody>
     </table>
 
     <div class="total">
-        <h3 style="text-align:end;">Total: $</h3>
+        <h3 style="text-align:end;"><strong>Total: $ {{ total }}</strong></h3>
         <h5>Recibido: $ 
-            <input type="text" name="Recibido" id="">
+            <input type="text" [(ngModel)]="recibido" name="Recibido" id="">
         </h5>
-        <h5>Cambio: $</h5>        
+        <br>
+        <label [class]="cambioDebe"><h5>Cambio: $ {{ cambio }}</h5></label>   
     </div>
     <br>
     <div class="d-grid gap-2">
-        <button class="btn btn-outline-success" type="button">Cobrar</button>
+        <button class="btn btn-outline-success" type="button" (click)="handleCambio()">Cobrar</button>
     </div>
 </div>
