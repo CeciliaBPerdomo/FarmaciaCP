@@ -48,7 +48,7 @@ export class VentasComponent implements OnInit {
       if (element.id === med.id){
         element.cantidad ++;
         this.total += element.precio;
-        return element
+        return element;
       }else {
         return element;
       }
@@ -89,4 +89,12 @@ export class VentasComponent implements OnInit {
     });
   }
 
+  deletedItem(medicamento: any){
+    sessionStorage.removeItem("medicamento" + medicamento.id);
+    const newItems = this.cartMed.filter((item: any)=> {
+      return item.id !== medicamento.id;
+    });
+    this.cartMed = newItems;
+    this.total -= medicamento.cantidad * medicamento.precio;
+  }
 }

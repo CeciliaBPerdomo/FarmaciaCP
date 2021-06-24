@@ -19,7 +19,7 @@
                     <a (click)="less(med)" class="btn btn-outline-danger"><i class="bi bi-dash"></i></a>
                 </th>
                 <th>{{med.precio | currency}}</th>
-                <th><a class="btn btn-outline-danger"><i class="bi bi-trash"></i></a></th>
+                <th><a class="btn btn-outline-danger" (click)="deletedItem(med)"><i class="bi bi-trash"></i></a></th>
             </tr>
         </tbody>
     </table>

@@ -114,5 +114,13 @@
       "precio": "66",
       "cantidad": "100"
     }
+  ], 
+  "usuarios": [
+    {
+      "id": 1, 
+      "alias": "amorisette",
+      "password": "am11",
+      "role": "vendedor"
+    }
   ]
 }

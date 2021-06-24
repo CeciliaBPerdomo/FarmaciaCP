@@ -1,1 +1,27 @@
-<p>usuarios works!</p>
+<br>
+<button type="button" class="btn btn-outline-success" style="float: right;">Nuevo usuario</button>
+<h3>Listado de usuarios</h3>
+<br>
+
+<div class="container">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+              <th scope="col" *ngFor = "let item of columnas">{{ item }}</th>
+            </tr>
+        </thead>
+
+        <tbody> 
+            <tr *ngFor = "let item of usuarios">
+                <th>{{item.id}}</th>
+                <th>{{item.alias}}</th>
+                <th>{{item.password}}</th>
+                <th>{{item.role}}</th>
+                <th>
+                    <a (click)="updateUsuario(item)" class="btn btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                    <a (click)="deleteUsuario(item.id)" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
