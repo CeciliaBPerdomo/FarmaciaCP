@@ -18,6 +18,14 @@ export class FarmaciaComponent implements OnInit {
   hasta = 0;
   qty = 0;
 
+  cartMed = {
+    cantidad: 0,
+    id: 0,
+    nombre: "",
+    precio: 0,
+    imagen: ""
+  }
+
   constructor(private _medicamentoService: MedicamentosService) { }
 
   ngOnInit(): void {
@@ -68,7 +76,17 @@ export class FarmaciaComponent implements OnInit {
   }
 
   less(){ /*Resta uno*/
-    this.qty = this.qty > 0 ? this.qty -1: /*para no tener valores negativos*/0;
+    this.qty = this.qty > 0 ? this.qty -1: 0;
   }
 
+  /*Agrega al carrito */
+  addToCart(medicamento: Medicamentos){
+    this.cartMed.id = medicamento.id;
+    this.cartMed.nombre = medicamento.nombre;
+    this.cartMed.precio = medicamento.precio;
+    this.cartMed.imagen = medicamento.imagen;
+    this.cartMed.cantidad = this.qty;
+
+    sessionStorage.setItem("medicamento" + medicamento.id, JSON.stringify(this.cartMed))
+  }
 }

@@ -28,18 +28,18 @@
             <li class="list-group-item"><strong>{{ medicamento.precio | currency }}</strong></li>
             <li class="list-group-item">Cantidad: {{ medicamento.cantidad }}</li>
         </ul>
-        <div class="qty">
+    
+        <div class="cantidad">
+            <a (click)="plus()" class="btn btn-outline-primary"><i class="bi bi-plus"></i></a>
+            <input type="text" [(ngModel)]="qty" style="width: 35px; margin: 2px 5px; text-align: center;" name="qty">
+            <a (click)="less()" class="btn btn-outline-danger"><i class="bi bi-dash"></i></a>
+
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <a (click)="plus()" class="btn btn-outline-primary"><i class="bi bi-plus"></i></a>
-                    <input type="text" [(ngModel)]="qty" style="width: 35px; margin: 2px 5px; text-align: center;">
-                    <a (click)="less()" class="btn btn-outline-danger"><i class="bi bi-dash"></i></a>
-                </li>
-                
-                <li class="list-group-item">
-                    <a class="btn btn-outline-success"><i class="bi bi-basket2-fill"></i></a>
-                </li>
+            <li class="list-group-item">
+                <a (click)="addToCart(medicamento)" class="btn btn-outline-success"><i class="bi bi-basket2-fill"></i></a>
+            </li>
             </ul>
+
         </div>
-      </div>
+    </div>
 </div>
