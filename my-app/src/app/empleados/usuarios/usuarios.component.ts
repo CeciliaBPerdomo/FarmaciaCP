@@ -14,7 +14,7 @@ export class UsuariosComponent implements OnInit {
   columnas = [
     'User n°', 
     'Alias', 
-    'Constraseña',
+    'Contraseña',
     'Role',
     '', /* Modificar */
     '' /* Eliminar */
